@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+
+    <style>
+        body {
+            background-color: rgb(221, 216, 216);
+        }
+
+        /*Testinomials CSS*/
+        .testimonialscontainer {
+            max-width: auto;
+            width: auto;
+
+        }
+
+        .waitlistform {
+            background-color: white;
+            border-radius: 20px;
+            border: 2px solid whitesmoke;
+            max-width: 90%;
+            width: 550px;
+            padding: 20px;
+
+        }
+
+        .form-control {
+            height: 50px;
+            background-color: lightgrey;
+        }
+
+        .joinlistbtn,
+        .joinlistbtn:hover {
+            background-color: rgb(165, 48, 233);
+            color: white;
+            width: 100%;
+        }
+
+        .start {
+            background-color: rgb(190, 247, 174);
+            width: 33%;
+            height: 38px;
+            border-radius: 20px;
+            padding-left: 3px;
+            padding-top: 6px;
+        }
+
+        .starting1 {
+            background-color: rgb(119, 241, 71);
+            width: 15%;
+            height: 34px;
+            border-radius: 20px;
+            padding: 8px;
+        }
+
+        .arrowimage {
+            width: 5%;
+            margin-left: 15px;
+        }
+
+        .testimonialsheading {
+            font-size: 400%;
+        }
+
+        .testimonialspara {
+            font-size: larger;
+        }
+
+        .profile1 {
+            width: 90px;
+            /* Adjust width as needed */
+            object-fit: cover;
+
+        }
+
+        .image-stack {
+            position: relative;
+        }
+
+        .profile-img {
+            width: 6%;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .profile-img:hover {
+            transform: translateY(-20px);
+            transition: transform 0.9s ease-out;
+        }
+
+        .profile1,
+        .profile2,
+        .profile3 {
+            margin-right: -40px;
+
+        }
+
+        .profile4 {
+            margin-right: 0;
+        }
+
+        .ratingimage {
+            width: 12%;
+            height: 10%;
+            padding-left: 0;
+            padding-top: 12px;
+            background-color: transparent;
+
+        }
+
+
+        /* Benefits CSS */
+        .box {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: start;
+            margin: 0 -90px;
+            width: auto;
+        }
+
+        .box>div {
+            background-color: rgb(177, 243, 24);
+            border-radius: 15px;
+            margin: 10px;
+            padding: 30px 30px;
+            width: 130%;
+            text-align: start;
+        }
+
+        .fingerprintpic1 {
+            width: 60px;
+        }
+
+        .benefitheading {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 250%;
+        }
+
+        .benefitpara {
+            font-size: large;
+        }
+
+        /* FAQ'S CSS */
+        .accordion-button::after {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-plus-lg' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2'/%3E%3C/svg%3E");
+            transition: all 0.5s;
+        }
+
+        .accordion-button:not(.collapsed)::after {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-x-lg' viewBox='0 0 16 16'%3E%3Cpath d='M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z'/%3E%3C/svg%3E");
+        }
+
+        .accordion-button {
+            font-weight: bold;
+            background-color: rgb(189, 185, 185) !important;
+            border: none;
+            color: black !important;
+        }
+
+        .accordion-button:focus {
+            box-shadow: none;
+
+        }
+
+        .accordion {
+            width: 90%;
+            max-width: 700px;
+            border-radius: 5px;
+        }
+
+        .accordion-item {
+            background-color: rgb(197, 192, 192);
+        }
+
+        .mt-5, .mb-5{
+            border-radius: 20px ; 
+            overflow: hidden;
+        }
+
+        .faqstart {
+            background-color: rgb(119, 241, 71);
+            width: 20%;
+            height: 34px;
+            border-radius: 20px;
+            padding: 8px;
+            margin-left: 40%;
+        }
+        .footercontainer {
+            border-radius: 20px !important;
+            overflow: hidden;
+            padding: 0% !important;
+        }
+        .col-md-5 img {
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+            object-fit: cover;
+        }
+        .card{
+            width: 100%;
+            height: 500px;           
+        }
+        .img-fluid{
+            height: 500px;
+        }
+        .card-body{
+            background-color: rgb(177, 243, 24); 
+            height: 500px;
+            padding: 200px 10px;
+            width: 100%;
+            
+        }
+        .card-title{
+            font-size: xx-large;
+            
+        }
+        
+        .websitetext,.question{
+            color: black;
+        }
+        .websitetext:hover{
+            color: rgb(65, 62, 62);
+        }
+        .websiteend{
+            font-size: x-large;
+        }
+        /*Responsiveness */
+        @media (max-width: 992px) {
+            .box {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .box>div {
+                width: calc(70% - 20px);
+
+            }
+
+            .testimonialscontainer {
+                width: 90%;
+                margin: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            .testimonialsheading {
+                text-align: center;
+                font-size: 270%;
+            }
+
+            .testimonialspara {
+                text-align: center;
+            }
+
+            body {
+                overflow-x: hidden;
+            }
+
+            .start {
+                width: 80%;
+                padding: 6px;
+            }
+
+            .starting1 {
+                width: auto;
+                padding: 6px;
+            }
+
+            .profilecontainer {
+                width: 100%;
+                margin-right: 50%;
+            }
+
+            .profile-img {
+                width: 15%;
+
+            }
+
+            .profile1 {
+                margin-right: -30px;
+                margin-left: 150px;
+            }
+
+            .profile2,
+            .profile3,
+            .profile4 {
+                align-items: center;
+                margin-right: -20px;
+                margin-left: -20px;
+            }
+
+            .ratingimage {
+                width: 30%;
+                height: auto;
+                margin-top: 10px;
+                margin-left: 170px;
+                /* Adjust margin-top as needed */
+            }
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <br>
+    <br>
+    
+    <div class="container">
+        <!--Testimonials Setion-->
+        <div class="testimonialscontainer ">
+            <div class="start mb-3 ">
+                <h6 class="starting1" style="display: inline;">
+                    Update
+                </h6>
+                <h6 style="display: inline; margin-left: 10px;">
+                    New Auto invoice mailing
+                </h6>
+                <img src="arrow-right-solid.svg" class="arrowimage" style="display: inline;">
+            </div>
+
+            <h1 class="testimonialsheading mb-3">Ease your mind on business operations.</h1>
+
+            <p class="testimonialspara">From intuitive task management to advanced data analytics, our software
+                equips
+                you
+                with the tools you need to thrive in today's competitive business landscape.</p>
+        </div>
+        <div class="profilecontainer mb-5">
+            <div class="row pt-5 image-stack">
+                <img src="P4.PNG" class="profile1 rounded-circle profile-img" alt="Profile Picture 4">
+                <img src="P1.PNG" class="profile2 rounded-circle profile-img" alt="Profile Picture 3">
+                <img src="P2.PNG" class="profile3 rounded-circle profile-img" alt="Profile Picture 2">
+                <img src="P3.PNG" class="profile4 rounded-circle profile-img" alt="Profile Picture 1">
+                <img src="5star.PNG" class="ratingimage" style="display: inline;">
+            </div>
+        </div>
+
+        <!--Wait list form-->
+        <div class="form-container d-flex justify-content-center align-items-center">
+            <form class="waitlistform ">
+                <h4 class="text-center">
+                    Secure your spot now
+                </h4>
+
+                <p class="text-center mb-4">
+                    Be the first to know when the produt launches <br>and other not-to-miss updates.
+                </p>
+                <div class="mb-3">
+                    <input type="text" name="personname" class="form-control" id="idname" placeholder="Your name">
+                </div>
+
+                <div class="mb-4">
+                    <input type="email" name="emailaddress" class="form-control" id="idemail" placeholder="Your email">
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn joinlistbtn">
+                        Join the Waitlist
+                    </button>
+                </div>
+                <div class="text-center mb-1">
+                    <p class="text-muted">By subscribing you agree with our <b><u> Terms of license</u></b></p>
+                </div>
+            </form>
+        </div>
+        <br>
+        <br>
+        <br>
+        <!--benefits Setion-->
+        <div class="benefitscontainer text-center">
+            <h1 class="benefitheading mb-3">Goodbye to traditional<br> backoffice hassle.</h1>
+            <p class="benefitpara mb-5">Welcome to a new era of simplicity and efficiency.</p>
+
+            <div class="box">
+                <div class="box1">
+                    <img src="fingerprint.svg" class="fingerprintpic1 mb-5">
+                    <h4 class="boxheading">Optimize your daily operations</h4>
+                    <p class="text-muted">T.R.A.V.E.L simplifies complex business processes, helping you efficiently
+                        manage tasks, projects, and resources.</p>
+                </div>
+                <div class="box2">
+                    <img src="fingerprint.svg" class="fingerprintpic1 mb-5">
+                    <h4 class="boxheading">Make informed business decisions</h4>
+                    <p class="text-muted">We provide comprehensive analytics, empowering you to identify trends, track
+                        performance, and adjust your strategies for success.</p>
+                </div>
+                <div class="box3">
+                    <img src="fingerprint.svg" class="fingerprintpic1 mb-5">
+                    <h4 class="boxheading">Scale your travel business with confidence</h4>
+                    <p class="text-muted">Our software is designed to grow alongside your business, adapting to your
+                        evolving needs. Scale your travel business with confidence.</p>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <!--FAQ'S Setion-->
+        <div class="container-fluid d-flex justify-content-center align-items-center flex-column ">
+            <div class="faqscontainer">
+                <div class="faqstart mb-3 ">
+                    <h6 class="text-center">
+                        FAQs
+                    </h6>
+                </div>
+                <div class="text-center">
+                    <h1 class="text-muted"><b>Still not convinced?</b></h1>
+                </div>
+                <div class="text-center">
+                    <h1>We've got the answers</h1>
+                </div>
+            </div>
+
+            <div class="accordion mt-5 mb-5">
+                <!-- Accordion Item 1 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            Is there a free Demo available?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                        data-bs-parent=".accordion">
+                        <div class="accordion-body">
+                            Yes! We have got you covered until you are satisfied
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Accordion Item 2 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            What is the pricing?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent=".accordion">
+                        <div class="accordion-body">
+                            We aim to offer the most affordable prices while delivering the highest quality features.
+                            Our
+                            pricing plans are tailored to suit the needs of different company sizes.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accordion Item 3 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            How can it e helpful for consolidate buisness?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent=".accordion">
+                        <div class="accordion-body">
+                            T.R.A.V.E.L is a software designed for businesses that have a large volume of transactions
+                            and
+                            sub-agents. It simplifies and automates the daily tasks of travel management.
+                        </div>
+                    </div>
+                </div>
+                <!-- Accordion Item 4 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
+                            Do i need advanced training to use this software?
+                        </button>
+                    </h2>
+                    <div id="collapsefour" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent=".accordion">
+                        <div class="accordion-body">
+                            T.R.A.V.E.L is designed with the user’s ease in mind, from beginners to professionals. It is
+                            very
+                            easy to learn and use. So, no advance traing is required. We provide video tutorial for
+                            almost
+                            every
+                            funtion
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="text-center mb-3">
+                <p class="question">Still have more questions? Contact our <u>help center</u>.</p>
+            </div>
+            
+        </div>
+        <div class="footercontainer">
+            <div class="card custom-card" style=" background-color: transparent; border: none; ">
+                <div class="row g-0">
+                    <div class="col-md-7">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Elevate your Tourism business into a new era, start now .</h5>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <img src="faqimage.webp" >
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="text-center pt-5 mt-5 mb-3">
+            <span class="websiteend"><b>Quantaflix</b></span>
+        </div>
+        <div class="text-center pt-5 mt-5 mb-3">
+            <span class="websitetext">All rights reserved quantaflix  |   Copyright© 2023</span>
+        </div>
+        <br>
+        <br>
+    </div>
+    
+    
+</body>
+
+</html>
